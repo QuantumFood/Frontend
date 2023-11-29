@@ -2,18 +2,20 @@ import { ref } from "vue";
 import axios from "axios";
 
 export default function useGetOrderedFood() {
-  const error = ref(null);
+  const errorForGetFood = ref(null);
+  const myFood = ref("");
 
   const getOrderedFood = async () => {
     console.log("logout in the useLogout");
     try {
       const token = localStorage.getItem("token");
       const response = await axios.get(
-        "https://pinto/orderedfood",
+        "http://192.168.126.15:8000/api/v1/requests/food",
 
         {
           headers: {
-            Authorization: `Bearer ${token}`,
+            token: token,
+            "Content-Type": "application/json",
           },
         }
       );
@@ -22,13 +24,16 @@ export default function useGetOrderedFood() {
         throw new Error(response.data.message || "Failed to logout");
       }
 
-      error.value = null;
-      console.log(response.data);
-      return response.data;
+      errorForGetFood.value = null;
+      console.log(response.data[0].food);
+      myFood.value = response.data[0]?.food;
+
+      // console.log(myfood.value, "this is my food");
+      return response.data[0]?.food;
     } catch (err) {
-      error.value = err.message;
+      errorForGetFood.value = err.response.data.detail;
     }
   };
 
-  return { error, getOrderedFood };
+  return { errorForGetFood, getOrderedFood };
 }

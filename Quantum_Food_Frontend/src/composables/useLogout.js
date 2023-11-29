@@ -1,9 +1,9 @@
 import { ref } from "vue";
 import axios from "axios";
-
+import { useRouter } from "vue-router";
 export default function useLogout() {
   const error = ref(null);
-
+  const router = useRouter();
   const logout = async () => {
     console.log("logout in the useLogout");
     try {
@@ -13,23 +13,25 @@ export default function useLogout() {
         {},
         {
           headers: {
-            Authorization: `Bearer ${token}`,
+            token: token,
+            "Content-Type": "application/json",
           },
         }
       );
 
       if (response.status !== 200) {
-        throw new Error(response.data.message || "Failed to logout");
+        throw new Error(response.data || "Failed to logout");
       }
 
       // Removing the token and user details from localStorage
       localStorage.removeItem("token");
-      localStorage.removeItem("userDetails");
+      localStorage.removeItem("user");
 
       error.value = null;
+      router.push("/");
       return response.data;
     } catch (err) {
-      error.value = err.message;
+      error.value = err.response.data.detail;
     }
   };
 

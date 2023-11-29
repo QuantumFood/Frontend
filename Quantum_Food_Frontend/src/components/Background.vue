@@ -1,5 +1,5 @@
 <template>
-    <div class="fixed inset-0 bg-cover backdrop:blur-sm">
+    <div class="fixed inset-0 bg-cover backdrop:blur-sm  bg-black opacity-120">
       <div v-for="(image, index) in images" :key="index" :style="{ backgroundImage: `url(${image})`, opacity: currentImageIndex === index ? 1 : 0 }" class="absolute inset-0 bg-cover transition-opacity duration-1000">
         <slot></slot>
       </div>

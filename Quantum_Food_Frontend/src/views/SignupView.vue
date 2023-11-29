@@ -1,9 +1,9 @@
 <template>
     <div class="min-h-screen flex items-center justify-center">
       <div class="bg-white p-8 rounded shadow-md w-full max-w-md">
-        <h2 class="text-2xl font-bold mb-6 text-center italic text-gray-800">Register@QuantumFood</h2>
-  
-        <form @submit.prevent="handleSignup">
+        <h2 class="text-2xl font-normal mb-4 text-center">Signup to</h2>
+        <h3 class="text-3xl font-bold mb-6 text-center italic">QuantumFoood</h3>
+        <form @submit.prevent="">
           <input type="hidden" name="remember" value="true">
          
 
@@ -78,7 +78,7 @@
 
         const handleSignup =()=>{
                  if(email.value && password.value && username.value){
-                signup(email.value, password.value, username.value)
+                signup( username.value, email.value,password.value)
                  }
         }
       return {

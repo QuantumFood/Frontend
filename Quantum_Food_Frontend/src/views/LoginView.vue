@@ -1,7 +1,9 @@
 <template>
+    
     <div class="min-h-screen flex items-center justify-center">
       <div class="bg-white p-8 rounded shadow-md w-full max-w-md">
-        <h2 class="text-2xl font-bold mb-6 text-center italic">Login@QuantumFood</h2>
+        <h2 class="text-2xl font-normal mb-4 text-center">Login to</h2>
+        <h3 class="text-3xl font-bold mb-6 text-center italic">QuantumFoood</h3>
   
         <form @submit.prevent="login">
           <input type="hidden" name="remember" value="true">
@@ -50,9 +52,15 @@
   
   <script>
  import useLogin from "../composables/useLogin";
+ import Background from "../components/Background.vue";
+ 
 
   import {ref} from "vue"
   export default {
+    components:{
+        Background,
+      
+    },
     setup() {
 
         const {login, error} = useLogin()

@@ -2,7 +2,7 @@
 module.exports = {
   content: ["./src/**/*.vue", "./src/**/*.js"],
   theme: {
-    extend: {},
+    extend: { backgroundColor: ["active"] },
   },
   variants: {
     extend: {},
