@@ -6,10 +6,10 @@
       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" :class="showMenu ? 'text-black' : 'text-white'" stroke="currentColor" class="h-6 w-6 text-black">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
       </svg>
-    </button>
+    </button> 
     <div v-if="showMenu" @click="showMenu = false" class="fixed inset-0 bg-gray-900 opacity-75 z-10"></div>
     <div v-if="showMenu" class="fixed inset-0 flex items-center justify-end z-20">
-      <div @click.stop class="w-1/2 h-full bg-slate-500 text-black">
+      <div @click.stop class="w-1/3 h-full bg-white text-black">
         <div class="space-y-8 text-center text-2xl flex flex-col items-center justify-center h-screen">
           
            <button class="    rounded font-extrabold " @click="handleLogout"  >Logout {{username}}</button>
@@ -22,8 +22,9 @@
 
 
 
-
-  <div class="text-white items-center justify-center flex flex-col mt-4 font-extrabold"><h1 class="font-extrabold text-4xl  text-green-700">Quantum<span class="text-white">Food</span></h1></div>
+  <h1 class=" font-extrabold  text-5xl  text-green-700  justify-start mt-10 pl-10">Quantum<span class=" text-white">Food</span></h1>
+  
+  <!-- <div class="text-white items-center justify-center flex flex-col mt-4 font-extrabold "><h1 class="font-extrabold text-4xl  text-green-700">Quantum<span class="text-white">Food</span></h1></div> -->
 
       <div class="flex flex-col items-center justify-center h-screen">
  
@@ -52,7 +53,7 @@
 
   
         <div v-if="showOrderHistory">
-          <p  class=" font-bold italic text-2xl" v-if="myfood" >You ordered: {{ myfood }}</p>
+          <p  class=" font-bold italic text-2xl   text-white" v-if="myfood" >You ordered: {{ myfood }}</p>
         </div>
       </div>
     </Background>

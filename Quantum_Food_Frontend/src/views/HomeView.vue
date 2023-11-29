@@ -5,8 +5,9 @@
       <!-- <p class=" text-white font-bold">Quantum Food</p> -->
       
      </div>
+     <h1 class=" font-extrabold  text-5xl  text-green-700  justify-start mt-10 pl-10">Quantum<span class=" text-white">Food</span></h1>
+       
       <div class=" flex flex-col items-center justify-center h-screen">
-        <h1 class=" font-extrabold text-4xl  text-green-700">Quantum<span class=" text-white">Food</span></h1>
         <p class=" text-center  text-white  italic font-extrabold   mt-10  w-60 h-30">
           Order your food from the comfort of your home
           

@@ -9,7 +9,7 @@ export default function useLogout() {
     try {
       const token = localStorage.getItem("token");
       const response = await axios.post(
-        "https://pinto/logout",
+        "http://192.168.126.15:8000/api/v1/auth/logout",
         {},
         {
           headers: {
